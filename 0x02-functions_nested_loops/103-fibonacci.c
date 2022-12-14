@@ -23,6 +23,6 @@ int main(void)
 			afnum += num1;
 		}
 	}
-	printf("%ld\n", afn);
+	printf("%ld\n", afnum);
 	return (0);
 }
