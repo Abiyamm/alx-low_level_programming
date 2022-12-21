@@ -1,7 +1,8 @@
 #include "main.h"
+#include <string.h>
 
 /**
- *_strcat -> this is a function strcat
+ *_strcat: -> this is a function strcat
  * @dest:first param
  * @src: second param
  * Return: a string
@@ -13,7 +14,7 @@ char *_strcat(char *dest, char *src)
 	while (dest[len])
 		len++;
 
-	for (i = 0, src[i] != 0; i++)
+	for (i = 0; src[i] != 0; i++)
 	{
 		dest[len] = src[i];
 		len += 1;
