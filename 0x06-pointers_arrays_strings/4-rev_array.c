@@ -8,19 +8,24 @@
  */
 void reverse_array(int *a, int n)
 {
-	int *p, i, aux, k, temp;
+	int i;
 
-	temp = a[1, 2, 3, 4];
-	aux = 1;
-	temp = a[4, 3, 2, 1];
-	p = a;
-	for (i = 0; i < n; i++)
-		p++;
-	for (k = 0; k < n / 2; k++)
+	int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 98, 1024, 1337};
+
+	i = 0;
+	while (i < n)
 	{
-		aux = a[k];
-		a[k] = *p;
-		*p = aux;
-		p--;
+	if (i != 0)
+	{
+		printf(", ");
 	}
+	printf("%d", a[i]);
+		i++;
+	}
+	printf("\n");
+	print_array(a, sizeof(a) / sizeof(int));
+	reverse_array(a, sizeof(a) / sizeof(int));
+	print_array(a, sizeof(a) / sizeof(int));
+	return (0);
 }
+
