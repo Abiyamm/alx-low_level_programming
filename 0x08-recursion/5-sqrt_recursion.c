@@ -14,12 +14,13 @@ int helperFunction(int num, int psqrt)
 	}
 	else
 	{
-		if ((psqrt * psqrt > num)
+		if ((psqrt * psqrt > num))
 			return (-1);
 		else
 			return (helperFunction(num,  psqrt + 1));
 	}
 }
+
 /**
  * _psqrt_recursion -> returns the natural square root of a number
  * @n: number to find sqrt of
