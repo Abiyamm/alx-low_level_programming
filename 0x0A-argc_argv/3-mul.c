@@ -10,18 +10,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int index, multiplication;
+	int mult = 0;
+	char c[] = "Error";
 
-	multiplication = 1;
-	if (argc < 3)
+	if (argc != 3)
 	{
-		printf("error\n");
+		printf("%s\n", c);
 		return (1);
 	}
-	for (index = 1; index < argc; index++)
-	{
-		multiplication = multiplication * atoi(argv[index]);
-	}
-	printf("%d\n", multiplication);
+	mult = atoi(argv[1]) * atoi(argv[2]);
+	printf("%i\n", mult);
 	return (0);
 }
