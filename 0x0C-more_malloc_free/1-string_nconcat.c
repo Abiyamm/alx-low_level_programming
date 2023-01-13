@@ -3,49 +3,42 @@
 #include <stdio.h>
 
 /**
- * _strlen - calculate and return string length
- * @string: string
- * Return: string length
- */
-int _strlen(char *string)
-{
-	int i;
-
-	for (i = 0; string[i] != '\0'; i++)
-		;
-	return (i);
-}
-/**
- * string_nconcat - concatenate s1 and n bytesof s2; return ptr to string
- * @s1: string 1
- * @s2: string 2
- * @n: n bytes to concat from string 2
- * Return: pointer to concatenate string
+ * string_nconcat - function that concatenates two strings.
+ * @s1: This is the first input string
+ * @s2: This is the second input string
+ * @n: This is the limit to copy the second string to the first string
+ *
+ * Return: This is the string joined
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	int num, len, i, j;
-
-	num = n;
+	unsigned int a, b;
+	char *newString;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	if (num < 0)
+	for (a = 0; s1[a] != '\0'; a++)
+	{
+	}
+	for (b = 0; s2[b] != '\0'; b++)
+	{
+	}
+	if (n > b)
+		n = b;
+	newString = malloc(((a + n) + 1));
+	if (newString == NULL)
 		return (NULL);
-	if (num >= _strlen(s2))
-		num = _strlen(s2);
-	len = _strlen(s2) + num + 1;
-	ptr = malloc(sizeof(*ptr) * len);
-	if (ptr == NULL)
-		return (NULL);
-
-	for (i = 0; s1[i] != '\0'; i++)
-		ptr[i] = s1[i];
-	for (j = 0; j < num; j++)
-		ptr[i + j] = s2[j];
-	ptr[i + j] = '\0';
-	return (ptr);
+	for (a = 0; s1[a] != '\0'; a++)
+	{
+		newString[a] = s1[a];
+	}
+	for (b = 0; b != n; b++)
+	{
+		newString[a] = s2[b];
+		a++;
+	}
+	newString[a] = '\0';
+	return (newString);
 }
