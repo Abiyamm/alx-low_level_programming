@@ -29,20 +29,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	num = n;
 
-	if (s1 == NULL)/*account for NULL string*/
+	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	if (num < 0)/*account for negative n bytes*/
+	if (num < 0)
 		return (NULL);
-	if (num >= _strlen(s2))/*account for n too big*/
+	if (num >= _strlen(s2))
 		num = _strlen(s2);
-	len = _strlen(s2) + num + 1; /*+1 to account for null pointer*/
-	ptr = malloc(sizeof(*ptr) * len);/*malloc and checkfor error*/
+	len = _strlen(s2) + num + 1;
+	ptr = malloc(sizeof(*ptr) * len);
 	if (ptr == NULL)
 		return (NULL);
 
-	for (i = 0; s1[i] != '\0'; i++)/*concat*/
+	for (i = 0; s1[i] != '\0'; i++)
 		ptr[i] = s1[i];
 	for (j = 0; j < num; j++)
 		ptr[i + j] = s2[j];
